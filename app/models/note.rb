@@ -1,5 +1,5 @@
 class Note < ApplicationRecord
-	has_many :tag_notes
+	has_many :tags_notes
 	has_many :tags, through: :tags_notes
 
 	has_many :users_notes
