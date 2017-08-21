@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="wrapper">
+    <div class="side-bar">
+      <ul>
+        <li class="menu-head">
+          Notas <a href "#" class="new_note">
+                &nbsp;&nbsp;
+                <span class="glyphicon glyphicon-plus"></span>
+              </a>
+              <a href "#" class="filter_note_trigger"> 
+                <span class="glyphicon glyphicon-filter pull-rigth"></span>
+              </a>
+              <hr>
+            </li>
+            <div class="menu">
+              <li class="row">
+                <form class="remove_tag col-md-12">
+                  <div class="col-md-8 col-xs-8" class="form-group">
+                    <input type="text" name="title" placeholder="Tag" class="form-control">
+                  </div>
+                  <div class="col-md-1 col-xs-3">
+                    <button class="btn btn-default filer_btn">
+                      <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                  </div>
+                </form>
+              </li>
+              <li>
+                <div class="notes-list">
+                <% @notes.each do |note| %>
+                  <div class="note">
+                    <a href="">
+                      <div>
+                        <div class="col-md-8">
+                          <br><%=h truncate(note.title, :length => 14) %></br>
+                        </div> 
+                          <div class="col-md-2">
+                            <br><%= note.created_at.strftime("%d/%M") %></br>
+                        </div> 
+                      </div>
+
+                      <div class="col-md-8">
+                        <%=h truncate(note.body, :length => 100) %>
+                      </div>
+                    </a>
+                  </div>
+                <% end %>
+              </div>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+</div> 
+
+
